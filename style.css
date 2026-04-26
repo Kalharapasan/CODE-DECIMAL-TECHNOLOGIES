@@ -1296,29 +1296,6 @@ body {
 }
 
 /* ========== FLOATING BUTTONS ========== */
-.whatsapp-float {
-  position: fixed;
-  bottom: 82px;
-  right: 24px;
-  width: 54px;
-  height: 54px;
-  background: #25d366;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-  z-index: 900;
-  transition: var(--transition);
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.12) translateY(-3px);
-}
-
 .back-to-top {
   position: fixed;
   bottom: 24px;
