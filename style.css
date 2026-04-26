@@ -65,12 +65,28 @@ body {
   color: white;
 }
 
-.loader-logo {
-  font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: 6px;
+.loader-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
   margin-bottom: 30px;
+}
+
+.loader-logo-img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.loader-logo-text {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 4px;
   font-family: 'Syne', sans-serif;
+  text-transform: uppercase;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -149,17 +165,19 @@ body {
 }
 
 .nav-logo-img {
-  height: 42px;
+  height: 54px;
   width: auto;
   border-radius: 6px;
   object-fit: contain;
 }
 
 .logo-text {
+  font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 1.05rem;
-  color: white;
-  letter-spacing: 0.5px;
+  font-size: 1rem;
+  color: var(--white);
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .desktop-nav {
