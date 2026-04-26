@@ -614,7 +614,29 @@ body {
   position: relative;
 }
 
-/* ========== FLOATING BUTTONS ========== */
+.about-section::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 38%;
+  background: linear-gradient(180deg, #edf4ff 0%, #e4efff 100%);
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-left {
+  flex: 0 0 46%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-svg {
+  width: 100%;
   max-width: 440px;
   height: auto;
   border-radius: 20px;
@@ -1120,6 +1142,40 @@ body {
   line-height: 1.8;
   margin-bottom: 24px;
   color: rgba(255, 255, 255, 0.58);
+}
+
+.mission-contact-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.mission-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.84rem;
+  transition: var(--transition);
+}
+
+.mission-contact-item:hover {
+  color: #ffffff;
+}
+
+.mission-contact-item i {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  background: rgba(26, 79, 216, 0.18);
+  border: 1px solid rgba(59, 130, 246, 0.32);
+  color: rgba(255, 255, 255, 0.95);
+  flex-shrink: 0;
 }
 
 .footer-contact-box {
