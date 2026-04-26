@@ -614,29 +614,7 @@ body {
   position: relative;
 }
 
-.about-section::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 38%;
-  background: linear-gradient(180deg, #edf4ff 0%, #e4efff 100%);
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.about-left {
-  flex: 0 0 46%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-
-.about-svg {
-  width: 100%;
+/* ========== FLOATING BUTTONS ========== */
   max-width: 440px;
   height: auto;
   border-radius: 20px;
