@@ -1123,60 +1123,6 @@ body {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.footer-quick-contact {
-  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
-  padding: 26px 60px;
-}
-
-.footer-quick-contact-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.footer-quick-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 11px 12px;
-  text-decoration: none;
-  border-radius: 10px;
-  background: rgba(26, 79, 216, 0.12);
-  border: 1px solid rgba(59, 130, 246, 0.18);
-  color: rgba(255, 255, 255, 0.8);
-  transition: var(--transition);
-  min-width: 0;
-}
-
-.footer-quick-item:hover {
-  background: rgba(26, 79, 216, 0.2);
-  border-color: rgba(56, 189, 248, 0.5);
-  transform: translateY(-2px);
-}
-
-.footer-quick-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 0.78rem;
-  color: white;
-  background: linear-gradient(135deg, var(--blue), var(--cyan));
-}
-
-.footer-quick-text {
-  font-size: 0.8rem;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .footer-inner {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
@@ -1243,7 +1189,7 @@ body {
 .footer-socials {
   display: flex;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .social-btn {
@@ -1265,6 +1211,15 @@ body {
   border-color: var(--blue);
   color: white;
   transform: translateY(-3px);
+}
+
+.footer-address-block {
+  margin-top: 8px;
+}
+
+.footer-address-block p {
+  margin-bottom: 0;
+  line-height: 1.75;
 }
 
 .footer-bottom-bar {
@@ -1647,14 +1602,6 @@ body {
     padding: 80px 28px;
   }
 
-  .footer-quick-contact {
-    padding: 20px 28px;
-  }
-
-  .footer-quick-contact-inner {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .footer-inner {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -1669,10 +1616,6 @@ body {
 }
 
 @media (max-width:600px) {
-  .footer-quick-contact-inner {
-    grid-template-columns: 1fr;
-  }
-
   .expertise-grid {
     grid-template-columns: 1fr;
   }
