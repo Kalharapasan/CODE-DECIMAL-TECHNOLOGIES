@@ -1123,6 +1123,21 @@ body {
   color: rgba(255, 255, 255, 0.75);
 }
 
+.footer-contact-section {
+  padding: 88px 60px 56px;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.footer-contact-section::after {
+  left: auto;
+  right: -180px;
+  top: -260px;
+}
+
+.footer-contact-section .contact-cards {
+  max-width: 1200px;
+}
+
 .footer-inner {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
@@ -1591,6 +1606,10 @@ body {
 
   .services-section, .team-section, .contact-section {
     padding: 80px 28px;
+  }
+
+  .footer-contact-section {
+    padding: 72px 28px 44px;
   }
 
   .footer-inner {
