@@ -138,10 +138,15 @@
 		"visionTitle": "Our Vision",
 		"visionText": "To shape the future of businesses by delivering innovative software solutions that unlock new perspectives and limitless possibilities for our clients.",
 		"contactLabel": "Inquiries",
-		"contactEmail": "sales@codedecimaltechnologies.com",
+		"contactEmail": "info@codedecimaltechnologies.com",
 		"missionTitle": "Inquiries",
 		"missionText": "For business inquiries and tender submissions, contact us using the details below.",
 		"missionContacts": [
+			{
+				"href": "mailto:info@codedecimaltechnologies.com",
+				"icon": "fas fa-envelope",
+				"text": "Business inquiries - info@codedecimaltechnologies.com"
+			},
 			{
 				"href": "mailto:sales@codedecimaltechnologies.com",
 				"icon": "fas fa-file-signature",
