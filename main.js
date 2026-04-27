@@ -1,14 +1,260 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  function hideLoader() {
+    const loader = document.getElementById('loader');
+    if (loader) loader.classList.add('hidden');
+  }
+
+  // Register loader close handlers immediately so the load event is never missed.
+  window.addEventListener('load', () => {
+    setTimeout(hideLoader, 1500);
+  });
+
+  // Fail-safe: hide loader even if some resource delays or blocks load.
+  setTimeout(hideLoader, 5000);
+
+  function initTeamAutoScroll() {
+    const teamGrid = document.getElementById('team-grid');
+    if (!teamGrid || teamGrid.dataset.autoScrollInit === '1') return;
+
+    teamGrid.dataset.autoScrollInit = '1';
+
+    let rafId = null;
+    let lastTs = 0;
+    let paused = false;
+    const speedPxPerMs = 0.085;
+
+    function step(ts) {
+      if (!lastTs) lastTs = ts;
+      const delta = ts - lastTs;
+      lastTs = ts;
+
+      const maxScroll = Math.max(0, teamGrid.scrollWidth - teamGrid.clientWidth);
+      if (!paused && maxScroll > 0) {
+        teamGrid.scrollLeft += speedPxPerMs * delta;
+        if (teamGrid.scrollLeft >= maxScroll - 1) {
+          teamGrid.scrollLeft = 0;
+        }
+      }
+
+      rafId = requestAnimationFrame(step);
+    }
+
+    function pauseScroll() {
+      paused = true;
+    }
+
+    function resumeScroll() {
+      paused = false;
+      lastTs = 0;
+    }
+
+    teamGrid.addEventListener('mouseenter', pauseScroll);
+    teamGrid.addEventListener('mouseleave', resumeScroll);
+    teamGrid.addEventListener('touchstart', pauseScroll, { passive: true });
+    teamGrid.addEventListener('touchend', resumeScroll, { passive: true });
+    teamGrid.addEventListener('focusin', pauseScroll);
+    teamGrid.addEventListener('focusout', resumeScroll);
+
+    window.addEventListener('beforeunload', () => {
+      if (rafId) cancelAnimationFrame(rafId);
+    });
+
+    rafId = requestAnimationFrame(step);
+  }
+
+  // Load JSON-managed site content so users can update text/cards from a single file.
+  async function loadContentData() {
+    try {
+      const response = await fetch('./Assets/data.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const data = await response.json();
+      if (!data || typeof data !== 'object') return;
+
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el && typeof value === 'string' && value.trim()) el.textContent = value;
+      };
+
+      const setHtml = (id, value) => {
+        const el = document.getElementById(id);
+        if (el && typeof value === 'string' && value.trim()) el.innerHTML = value;
+      };
+
+      const heroData = data.hero;
+      if (heroData) {
+        setHtml('hero-label', heroData.labelHtml);
+        setHtml('hero-title', heroData.titleHtml);
+        setText('hero-desc', heroData.description);
+        setHtml('hero-primary-btn', `${heroData.primaryButtonText || 'Get Started'} <i class="fas fa-arrow-right"></i>`);
+        setText('hero-secondary-btn', heroData.secondaryButtonText);
+      }
+
+      const aboutData = data.aboutUs;
+      const aboutTitle = document.getElementById('about-title');
+      if (aboutTitle && aboutData && typeof aboutData.titleHtml === 'string' && aboutData.titleHtml.trim()) {
+        aboutTitle.innerHTML = aboutData.titleHtml;
+      }
+
+      const aboutContent = document.getElementById('about-content');
+      if (aboutContent && aboutData && Array.isArray(aboutData.paragraphs)) {
+        aboutContent.innerHTML = '';
+        aboutData.paragraphs.forEach((paragraph) => {
+          if (typeof paragraph !== 'string' || !paragraph.trim()) return;
+          const p = document.createElement('p');
+          p.textContent = paragraph;
+          aboutContent.appendChild(p);
+        });
+      }
+
+      const servicesData = data.services;
+      if (servicesData) {
+        setText('services-label', servicesData.label);
+        setHtml('services-title', servicesData.titleHtml);
+        setText('services-subtitle', servicesData.subtitle);
+
+        const servicesGrid = document.getElementById('services-grid');
+        if (servicesGrid && Array.isArray(servicesData.cards)) {
+          servicesGrid.innerHTML = '';
+          servicesData.cards.forEach((card, index) => {
+            if (!card || typeof card !== 'object') return;
+            const cardEl = document.createElement('div');
+            const colorClass = card.colorClass || `card-color-${index + 1}`;
+            const soloClass = card.solo ? ' card-solo' : '';
+            cardEl.className = `expertise-card ${colorClass}${soloClass}`;
+            cardEl.innerHTML = `
+              <div class="expertise-top">
+                <div class="expertise-icon"><i class="${card.icon || 'fas fa-cogs'}"></i></div>
+              </div>
+              <h3>${card.title || ''}</h3>
+              <p>${card.description || ''}</p>
+              <a href="${card.href || '#contact'}" class="read-more">${card.readMoreText || 'Read More'} <i class="fas fa-angle-double-right"></i></a>
+            `;
+            servicesGrid.appendChild(cardEl);
+          });
+        }
+      }
+
+      const teamData = data.team;
+      if (teamData) {
+        setText('team-label', teamData.label);
+        setHtml('team-title', teamData.titleHtml);
+        setText('team-subtitle', teamData.subtitle);
+
+        const teamGrid = document.getElementById('team-grid');
+        if (teamGrid && Array.isArray(teamData.members)) {
+          teamGrid.innerHTML = '';
+          teamData.members.forEach((member) => {
+            if (!member || typeof member !== 'object') return;
+            const theme = member.theme === 'orange' ? 'orange' : 'teal';
+            const isLegal = Boolean(member.isLegalCard);
+            const card = document.createElement('div');
+            card.className = `leader-card leader-card-${theme}${isLegal ? ' leader-card-legal' : ''}`;
+
+            const socials = Array.isArray(member.socials)
+              ? member.socials.map((social) => `
+                  <a href="${social.href || '#'}" class="leader-social-btn lsb-${theme}" title="${social.title || ''}"${social.targetBlank ? ' target="_blank"' : ''}>
+                    <i class="${social.icon || 'fas fa-link'}"></i>
+                  </a>`).join('')
+              : '';
+
+            card.innerHTML = `
+              <div class="leader-accent-bar"></div>
+              ${member.image ? `<div class="leader-photo-wrap"><img src="${member.image}" alt="${member.name || 'Leader'}" class="leader-photo"></div>` : ''}
+              <div class="leader-info">
+                <h3 class="leader-name">${member.name || ''}</h3>
+                <p class="leader-title">${member.title || ''}</p>
+                <div class="leader-divider"></div>
+                ${member.email ? `
+                <div class="leader-email-row">
+                  <span class="leader-email-icon ${theme}-icon"><i class="fas fa-envelope"></i></span>
+                  <a href="mailto:${member.email}" class="leader-email-text">${member.email}</a>
+                </div>` : ''}
+                <div class="leader-socials">${socials}</div>
+              </div>
+            `;
+
+            teamGrid.appendChild(card);
+          });
+
+          initTeamAutoScroll();
+        }
+      }
+
+      const footerData = data.footer;
+      if (footerData) {
+        setText('footer-vision-title', footerData.visionTitle);
+        setText('footer-vision-text', footerData.visionText);
+        setText('footer-contact-label', footerData.contactLabel);
+
+        const footerContactEmail = document.getElementById('footer-contact-email');
+        if (footerContactEmail && typeof footerData.contactEmail === 'string' && footerData.contactEmail.trim()) {
+          footerContactEmail.textContent = footerData.contactEmail;
+          footerContactEmail.href = `mailto:${footerData.contactEmail}`;
+        }
+
+        setText('footer-mission-title', footerData.missionTitle);
+        setText('footer-mission-text', footerData.missionText);
+        setText('footer-follow-title', footerData.followTitle);
+        setText('footer-address-title', footerData.addressTitle);
+        setHtml('footer-address-text', footerData.addressHtml);
+        setHtml('footer-copyright', footerData.copyrightHtml);
+
+        const footerMissionList = document.getElementById('footer-mission-list');
+        if (footerMissionList && Array.isArray(footerData.missionContacts)) {
+          footerMissionList.innerHTML = '';
+          footerData.missionContacts.forEach((item) => {
+            const a = document.createElement('a');
+            a.className = 'mission-contact-item';
+            a.href = item.href || '#';
+            if (item.targetBlank) a.target = '_blank';
+            a.innerHTML = `<i class="${item.icon || 'fas fa-link'}"></i><span>${item.text || ''}</span>`;
+            footerMissionList.appendChild(a);
+          });
+        }
+
+        const footerSocials = document.getElementById('footer-socials');
+        if (footerSocials && Array.isArray(footerData.socialLinks)) {
+          footerSocials.innerHTML = '';
+          footerData.socialLinks.forEach((item) => {
+            const a = document.createElement('a');
+            a.className = 'social-btn';
+            a.href = item.href || '#';
+            if (item.targetBlank) a.target = '_blank';
+            a.innerHTML = `<i class="${item.icon || 'fas fa-link'}"></i>`;
+            footerSocials.appendChild(a);
+          });
+        }
+
+        const footerBottomLinks = document.getElementById('footer-bottom-links');
+        if (footerBottomLinks && Array.isArray(footerData.bottomLinks)) {
+          footerBottomLinks.innerHTML = '';
+          footerData.bottomLinks.forEach((item, index) => {
+            const link = document.createElement('a');
+            link.href = item.href || '#';
+            link.textContent = item.label || '';
+            footerBottomLinks.appendChild(link);
+            if (index < footerData.bottomLinks.length - 1) {
+              const sep = document.createElement('span');
+              sep.textContent = '|';
+              footerBottomLinks.appendChild(sep);
+            }
+          });
+        }
+      }
+    } catch (error) {
+      console.warn('Unable to load content from Assets/data.json', error);
+    }
+  }
+
+  loadContentData();
+  setTimeout(initTeamAutoScroll, 600);
+
   // ============================================================
   // 1. LOADER
   // ============================================================
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      const loader = document.getElementById('loader');
-      if (loader) loader.classList.add('hidden');
-    }, 1500);
-  });
+  // Loader handlers are set at the top of this file.
 
   // ============================================================
   // 2. PARTICLES ANIMATION

@@ -1,0 +1,196 @@
+{
+	"hero": {
+		"labelHtml": "Empower your business with smart software <span class=\"hero-dash\">--</span>",
+		"titleHtml": "Empower your<br>business with<br><em>smart software</em>",
+		"description": "We support expanding our clients' technological capabilities and empowering their workforce, so businesses can unlock new opportunities, drive innovation, and achieve sustainable growth. This approach fosters a dynamic and resilient environment that keeps organizations competitive in a rapidly evolving digital landscape.",
+		"primaryButtonText": "Get Started",
+		"secondaryButtonText": "Explore Services"
+	},
+	"aboutUs": {
+		"titleHtml": "CODE DECIMAL TECHNOLOGIES: Purpose-Driven, Future-Ready <em>Solutions</em>",
+		"paragraphs": [
+			"CODE DECIMAL TECHNOLOGIES is built on a vision of staying ahead of what is next. We provide purpose-driven technology solutions to businesses worldwide, delivering agile, adaptive, and future-ready enterprise services designed to solve both today's challenges and tomorrow's opportunities.",
+			"Our focus is on driving measurable results that accelerate growth, optimize operations, and enhance every aspect of your business. Each solution is tailored to meet the unique goals and requirements of your organization.",
+			"We work closely with our clients to transform their technology landscape, ensuring it aligns seamlessly with a digitally empowered future.",
+			"Above all, we create solutions that delight stakeholders, reduce effort, improve efficiency, and go beyond meeting needs to exceeding expectations for employees, customers, and partners."
+		]
+	},
+	"services": {
+		"label": "Our Expertise",
+		"titleHtml": "What We <em>Offer</em>",
+		"subtitle": "Comprehensive technology solutions tailored to accelerate your business growth and digital transformation.",
+		"cards": [
+			{
+				"title": "Cloud & DevOps Engineering",
+				"description": "We can help you with realizing the true benefits of Cloud technologies and DevOps practices. We have skills ranging from architecting and building scalable Cloud Landing Zones to transforming traditional infrastructure and operations disciplines to DevOps, SRE and platform engineering practices.",
+				"icon": "fas fa-cloud-upload-alt",
+				"colorClass": "card-color-1",
+				"href": "#contact",
+				"readMoreText": "Read More"
+			},
+			{
+				"title": "Cyber Security",
+				"description": "Implementing cybersecurity solutions is crucial to protect sensitive data, ensure business continuity, prevent financial losses, and build customer trust. We provide consultancy and practical solutions to strengthen your security posture.",
+				"icon": "fas fa-shield-alt",
+				"colorClass": "card-color-2",
+				"href": "#contact",
+				"readMoreText": "Read More"
+			},
+			{
+				"title": "Data & AI Platforms",
+				"description": "We transform raw data into actionable insights that drive business growth and innovation. Our AI, data engineering, and analytics services help you remain ahead in a data-driven world.",
+				"icon": "fas fa-brain",
+				"colorClass": "card-color-3",
+				"href": "#contact",
+				"readMoreText": "Read More"
+			},
+			{
+				"title": "Networking & Collaboration",
+				"description": "We provide secure and scalable networking and collaboration solutions to build resilient, high-performance connectivity that enables seamless communication and productivity.",
+				"icon": "fas fa-network-wired",
+				"colorClass": "card-color-4",
+				"href": "#contact",
+				"readMoreText": "Read More"
+			},
+			{
+				"title": "CORE Infrastructure",
+				"description": "We deliver secure, scalable CORE infrastructure solutions and consultancy to power high-performance IT environments that grow with your business needs.",
+				"icon": "fas fa-server",
+				"colorClass": "card-color-5",
+				"href": "#contact",
+				"readMoreText": "Read More"
+			},
+			{
+				"title": "Managed Services",
+				"description": "We provide end-to-end managed services to help clients manage IT environments effectively, reduce costs, strengthen security, and focus on core business activities.",
+				"icon": "fas fa-cogs",
+				"colorClass": "card-color-6",
+				"href": "#contact",
+				"readMoreText": "Read More"
+			},
+			{
+				"title": "ERP as a Managed Service",
+				"description": "We manage your ERP while you focus on your core business. Our cloud ERP approach enables seamless data flows across business functions for better decision making.",
+				"icon": "fas fa-desktop",
+				"colorClass": "card-color-7",
+				"solo": true,
+				"href": "#contact",
+				"readMoreText": "Read More"
+			}
+		]
+	},
+
+
+	"team": {
+		"label": "Our People",
+		"titleHtml": "Meet Our <em>Team</em>",
+		"subtitle": "Leadership and specialists driving innovation and service excellence at CODE DECIMAL TECHNOLOGIES.",
+		"members": [
+			{
+				"name": "Dijid Maddumakumara",
+				"title": "Executive Director",
+				"theme": "teal",
+				"image": "Assets/img/team/Dijid_Maddumakumara.png",
+				"socials": []
+			},
+			{
+				"name": "Kasun Akshitha",
+				"title": "Executive Director",
+				"theme": "orange",
+				"image": "Assets/img/team/Kasun_Akshitha.jpeg",
+				"socials": []
+			},
+			{
+				"name": "Chathusala Dinushani Jayasinghe",
+				"title": "Company Secretary",
+				"theme": "teal",
+				"image": "Assets/img/team/Chathusala_Dinushani.jpeg",
+				"socials": []
+			},
+			{
+				"name": "Varuna Rajapaksha",
+				"title": "Chief Technology Office",
+				"theme": "orange",
+				"socials": []
+			},
+			{
+				"name": "Anasly Joseph",
+				"title": "Consultant - Systems",
+				"theme": "teal",
+				"image": "Assets/img/team/Anasly_Joseph.jpeg",
+				"socials": []
+			},
+			{
+				"name": "Kavindu Perera",
+				"title": "Technical Lead - Microsoft",
+				"theme": "orange",
+				"socials": []
+			},
+			{
+				"name": "Chathurika Gunarathne",
+				"title": "Customer Support and Service Delivery Manager",
+				"theme": "teal",
+				"socials": []
+			}
+		]
+	},
+	"footer": {
+		"visionTitle": "Our Vision",
+		"visionText": "To shape the future of businesses by delivering innovative software solutions that unlock new perspectives and limitless possibilities for our clients.",
+		"contactLabel": "Inquiries",
+		"contactEmail": "info@codedecimaltechnologies.com",
+		"missionTitle": "Inquiries",
+		"missionText": "For business inquiries and tender submissions, contact us using the details below.",
+		"missionContacts": [
+			{
+				"href": "mailto:info@codedecimaltechnologies.com",
+				"icon": "fas fa-envelope",
+				"text": "Business inquiries - info@codedecimaltechnologies.com"
+			},
+			{
+				"href": "mailto:sales@codedecimaltechnologies.com",
+				"icon": "fas fa-file-signature",
+				"text": "Tender Submissions - sales@codedecimaltechnologies.com"
+			},
+			{
+				"href": "tel:+94774070137",
+				"icon": "fas fa-phone-alt",
+				"text": "0774070137"
+			},
+			{
+				"href": "https://maps.google.com/?q=218+Doalakanda,+Dehiaththakandiya,+Sri+Lanka",
+				"icon": "fas fa-map-marker-alt",
+				"text": "218 Doalakanda, Sri Lanka",
+				"targetBlank": true
+			}
+		],
+		"followTitle": "Follow Us On",
+		"socialLinks": [
+			{
+				"href": "#",
+				"icon": "fab fa-facebook-f"
+			},
+			{
+				"href": "#",
+				"icon": "fab fa-linkedin-in"
+			}
+		],
+		"addressTitle": "Our Address",
+		"addressHtml": " 471/3, Highlevel Road, Makumbura, Pannipitiya,<br>Sri Lanka",
+		"copyrightHtml": "Copyright &copy; 2026 <strong>CODE DECIMAL TECHNOLOGIES</strong>",
+		"bottomLinks": [
+			{
+				"label": "About Us",
+				"href": "#about"
+			},
+			{
+				"label": "Services",
+				"href": "#services"
+			},
+			{
+				"label": "Contact",
+				"href": "#contact"
+			}
+		]
+	}
+}
