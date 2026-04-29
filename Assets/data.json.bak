@@ -1,7 +1,7 @@
 {
 	"hero": {
-		"labelHtml": "Technology solutions <span class=\"hero-dash\">--</span>",
-		"titleHtml": "Technology<br>solutions for<br><em>your business</em>",
+		"labelHtml": "Empower your business with smart software <span class=\"hero-dash\">--</span>",
+		"titleHtml": "Empower your<br>business with<br><em>smart software</em>",
 		"description": "We support expanding our clients' technological capabilities and empowering their workforce, so businesses can unlock new opportunities, drive innovation, and achieve sustainable growth. This approach fosters a dynamic and resilient environment that keeps organizations competitive in a rapidly evolving digital landscape.",
 		"primaryButtonText": "Get Started",
 		"secondaryButtonText": "Explore Services"
@@ -151,14 +151,14 @@
 				"text": "Tender Submissions - sales@codedecimaltechnologies.com"
 			},
 			{
-				"href": "tel:+94772411373",
+				"href": "tel:+94774070137",
 				"icon": "fas fa-phone-alt",
-				"text": "0772411373 / 0774070137"
+				"text": "0774070137"
 			},
 			{
-				"href": "https://maps.google.com/?q=471/3+Highlevel+Road+Makumbura+Pannipitiya+Sri+Lanka",
+				"href": "https://maps.google.com/?q=218+Doalakanda,+Dehiaththakandiya,+Sri+Lanka",
 				"icon": "fas fa-map-marker-alt",
-				"text": "471/3, Highlevel Road, Makumbura, Pannipitiya, Sri Lanka",
+				"text": "218 Doalakanda, Sri Lanka",
 				"targetBlank": true
 			}
 		],
@@ -174,7 +174,7 @@
 			}
 		],
 		"addressTitle": "Our Address",
-		"addressHtml": "471/3, Highlevel Road, Makumbura, Pannipitiya,<br>Sri Lanka",
+		"addressHtml": " 471/3, Highlevel Road, Makumbura, Pannipitiya,<br>Sri Lanka",
 		"copyrightHtml": "Copyright &copy; 2026 <strong>CODE DECIMAL TECHNOLOGIES</strong>",
 		"bottomLinks": [
 			{
