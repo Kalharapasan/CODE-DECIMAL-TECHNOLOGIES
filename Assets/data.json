@@ -137,8 +137,10 @@
 	"footer": {
 		"visionTitle": "Our Vision",
 		"visionText": "To drive business innovation with advanced IT solutions that create new viewpoints and unlimited opportunities for our clients.",
+		"ourMissionTitle": "Our Mission",
+		"ourMissionText": "To drive business excellence by creating innovative technology solutions that inspire growth and success for our clients across Sri Lanka and beyond.",
 		"missionTitle": "Contact Us",
-		"missionText": "To enable business excellence through creative technology solutions that spark growth and sustainable success.",
+		"missionText": "",
 		"missionContacts": [
 			{
 				"href": "mailto:info@codedecimaltechnologies.com",

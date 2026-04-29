@@ -186,6 +186,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (footerData) {
         setText('footer-vision-title', footerData.visionTitle);
         setText('footer-vision-text', footerData.visionText);
+        setText('footer-our-mission-title', footerData.ourMissionTitle);
+        setText('footer-our-mission-text', footerData.ourMissionText);
         setText('footer-contact-label', footerData.contactLabel);
 
         const footerContactEmail = document.getElementById('footer-contact-email');
@@ -195,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         setText('footer-mission-title', footerData.missionTitle);
-        setText('footer-mission-text', footerData.missionText);
         setText('footer-follow-title', footerData.followTitle);
         setText('footer-address-title', footerData.addressTitle);
         setHtml('footer-address-text', footerData.addressHtml);
