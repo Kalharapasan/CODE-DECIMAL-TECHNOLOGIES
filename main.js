@@ -13,55 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Fail-safe: hide loader even if some resource delays or blocks load.
   setTimeout(hideLoader, 5000);
 
-  function initTeamAutoScroll() {
-    const teamGrid = document.getElementById('team-grid');
-    if (!teamGrid || teamGrid.dataset.autoScrollInit === '1') return;
-
-    teamGrid.dataset.autoScrollInit = '1';
-
-    let rafId = null;
-    let lastTs = 0;
-    let paused = false;
-    const speedPxPerMs = 0.085;
-
-    function step(ts) {
-      if (!lastTs) lastTs = ts;
-      const delta = ts - lastTs;
-      lastTs = ts;
-
-      const maxScroll = Math.max(0, teamGrid.scrollWidth - teamGrid.clientWidth);
-      if (!paused && maxScroll > 0) {
-        teamGrid.scrollLeft += speedPxPerMs * delta;
-        if (teamGrid.scrollLeft >= maxScroll - 1) {
-          teamGrid.scrollLeft = 0;
-        }
-      }
-
-      rafId = requestAnimationFrame(step);
-    }
-
-    function pauseScroll() {
-      paused = true;
-    }
-
-    function resumeScroll() {
-      paused = false;
-      lastTs = 0;
-    }
-
-    teamGrid.addEventListener('mouseenter', pauseScroll);
-    teamGrid.addEventListener('mouseleave', resumeScroll);
-    teamGrid.addEventListener('touchstart', pauseScroll, { passive: true });
-    teamGrid.addEventListener('touchend', resumeScroll, { passive: true });
-    teamGrid.addEventListener('focusin', pauseScroll);
-    teamGrid.addEventListener('focusout', resumeScroll);
-
-    window.addEventListener('beforeunload', () => {
-      if (rafId) cancelAnimationFrame(rafId);
-    });
-
-    rafId = requestAnimationFrame(step);
-  }
+  // Team auto-scroll disabled to present a static grid of members.
 
   // Load JSON-managed site content so users can update text/cards from a single file.
   async function loadContentData() {
@@ -178,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
             teamGrid.appendChild(card);
           });
 
-          initTeamAutoScroll();
         }
       }
 
@@ -250,7 +201,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   loadContentData();
-  setTimeout(initTeamAutoScroll, 600);
 
   // ============================================================
   // 1. LOADER
