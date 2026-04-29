@@ -1199,15 +1199,31 @@ body {
 
 .leader-email { display: none !important; }
 
-.leader-card-legal .leader-info { padding-top: 30px; }
+.leader-card-legal {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+}
+.leader-card-legal .leader-info { 
+  padding: 40px 24px 24px; 
+  text-align: center;
+}
 .leader-card-legal .leader-name {
   text-transform: uppercase;
-  letter-spacing: 0.4px;
-  font-size: 1rem;
-  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 900;
 }
-.leader-card-legal .leader-title { letter-spacing: 2px; }
-.leader-card-legal .leader-divider { margin: 14px 0; }
+.leader-card-legal .leader-title { 
+  letter-spacing: 2.5px; 
+  font-size: 0.7rem;
+  margin-bottom: 18px;
+}
+.leader-card-legal .leader-divider { 
+  margin: 16px 0; 
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* ─────────────────────────────────────────
    CONTACT SECTION
@@ -1693,6 +1709,10 @@ body.dark-mode .btn-ghost:hover { background: rgba(59,130,246,0.12); }
 @media (max-width: 1100px) {
   .card-solo { grid-column: auto; }
   .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 20px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1812,19 +1832,19 @@ body.dark-mode .btn-ghost:hover { background: rgba(59,130,246,0.12); }
   /* Team Section */
   .team-section { padding: 60px 16px; }
   .leadership-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 12px;
-    padding: 4px 0 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 16px;
+    padding: 0;
   }
   .leader-card { border-radius: 16px; }
-  .leader-photo-wrap { height: 240px; }
-  .leader-name { font-size: 0.9rem; }
-  .leader-title { font-size: 0.65rem; }
-  .leader-info { padding: 12px 12px 16px; }
-  .leader-email-row { padding: 8px 10px; gap: 8px; }
-  .leader-email-text { font-size: 0.7rem; }
-  .leader-socials { gap: 6px; }
-  .leader-social-btn { width: 32px; height: 32px; font-size: 0.7rem; }
+  .leader-photo-wrap { height: 280px; }
+  .leader-name { font-size: 0.95rem; }
+  .leader-title { font-size: 0.68rem; }
+  .leader-info { padding: 14px 14px 16px; }
+  .leader-email-row { padding: 9px 12px; gap: 9px; }
+  .leader-email-text { font-size: 0.75rem; }
+  .leader-socials { gap: 7px; }
+  .leader-social-btn { width: 34px; height: 34px; font-size: 0.75rem; }
 
   /* Contact Section */
   .contact-section { 
@@ -1985,38 +2005,38 @@ body.dark-mode .btn-ghost:hover { background: rgba(59,130,246,0.12); }
   /* Team Section */
   .team-section { padding: 50px 12px; }
   .leadership-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 16px;
     padding: 0;
   }
   .leader-card { 
     border-radius: 12px;
   }
   .leader-photo-wrap { 
-    height: 180px;
+    height: 280px;
   }
   .leader-name { 
-    font-size: 0.85rem; 
-    margin-bottom: 2px;
+    font-size: 0.95rem; 
+    margin-bottom: 4px;
   }
   .leader-title { 
-    font-size: 0.6rem; 
-    margin-bottom: 10px;
+    font-size: 0.65rem; 
+    margin-bottom: 12px;
   }
-  .leader-info { padding: 10px 10px 12px; }
-  .leader-divider { margin-bottom: 10px; }
+  .leader-info { padding: 16px 14px 14px; }
+  .leader-divider { margin: 10px 0 12px; }
   .leader-email-row { 
-    padding: 6px 8px; 
-    margin-bottom: 10px;
-    border-radius: 8px;
+    padding: 8px 10px; 
+    margin-bottom: 12px;
+    border-radius: 10px;
   }
-  .leader-email-icon { width: 26px; height: 26px; font-size: 0.65rem; }
-  .leader-email-text { font-size: 0.65rem; }
-  .leader-socials { gap: 4px; }
+  .leader-email-icon { width: 28px; height: 28px; font-size: 0.7rem; }
+  .leader-email-text { font-size: 0.72rem; }
+  .leader-socials { gap: 8px; }
   .leader-social-btn { 
-    width: 28px; 
-    height: 28px; 
-    font-size: 0.65rem;
+    width: 36px; 
+    height: 36px; 
+    font-size: 0.75rem;
     border-radius: 50%;
   }
 
