@@ -139,13 +139,6 @@ document.addEventListener('DOMContentLoaded', function () {
         setText('footer-vision-text', footerData.visionText);
         setText('footer-our-mission-title', footerData.ourMissionTitle);
         setText('footer-our-mission-text', footerData.ourMissionText);
-        setText('footer-contact-label', footerData.contactLabel);
-
-        const footerContactEmail = document.getElementById('footer-contact-email');
-        if (footerContactEmail && typeof footerData.contactEmail === 'string' && footerData.contactEmail.trim()) {
-          footerContactEmail.textContent = footerData.contactEmail;
-          footerContactEmail.href = `mailto:${footerData.contactEmail}`;
-        }
 
         setText('footer-mission-title', footerData.missionTitle);
         setText('footer-follow-title', footerData.followTitle);
