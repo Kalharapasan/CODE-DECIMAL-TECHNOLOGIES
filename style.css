@@ -1131,7 +1131,7 @@ body {
 }
 
 .leader-email-row {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 12px;
   margin-bottom: 18px;
@@ -1169,7 +1169,7 @@ body {
 .leader-email-text:hover { color: var(--blue-mid); }
 
 .leader-socials { 
-  display: flex; 
+  display: none;
   gap: 10px;
   margin-top: auto;
 }
