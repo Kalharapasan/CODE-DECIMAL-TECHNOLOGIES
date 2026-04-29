@@ -1,5 +1,6 @@
 {
 	"hero": {
+		"heroImage": "Assets/img/banner1.png",
 		"labelHtml": "Technology solutions <span class=\"hero-dash\">--</span>",
 		"titleHtml": "Technology<br>solutions for<br><em>your business</em>",
 		"description": "We support expanding our clients' technological capabilities and empowering their workforce, so businesses can unlock new opportunities, drive innovation, and achieve sustainable growth. This approach fosters a dynamic and resilient environment that keeps organizations competitive in a rapidly evolving digital landscape.",
