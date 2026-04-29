@@ -1008,11 +1008,11 @@ body {
 .leadership-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px 28px;
+  gap: 40px 32px;
   align-items: start;
   overflow: visible;
-  padding: 16px 0;
-  max-width: 900px;
+  padding: 24px 0;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -1053,9 +1053,9 @@ body {
 
 .leader-photo-wrap {
   width: 100%;
-  height: 360px;
+  height: 340px;
   overflow: hidden;
-  background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 50%, #f0f9ff 100%);
+  background: linear-gradient(135deg, #d9e8f5 0%, #e6f0f9 50%, #f0f7ff 100%);
   position: relative;
   display: flex;
   align-items: center;
@@ -1065,19 +1065,21 @@ body {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 0%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.2), transparent);
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 40%, transparent 60%, rgba(150,150,150,0.15) 100%);
   pointer-events: none;
+  z-index: 2;
 }
 .leader-photo-wrap::after {
   content: '';
   position: absolute;
   bottom: 0; right: 0;
-  width: 40%;
-  height: 40%;
-  background: linear-gradient(135deg, rgba(37,99,235,0.08), transparent);
+  width: 45%;
+  height: 45%;
+  background: linear-gradient(135deg, rgba(100,100,100,0.2), transparent);
   pointer-events: none;
   border-radius: 50% 0 0 0;
+  z-index: 1;
 }
 
 .leader-photo {
@@ -1094,36 +1096,38 @@ body {
 }
 
 .leader-info { 
-  padding: 24px 20px 22px;
+  padding: 28px 24px 24px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   background: var(--white);
+  text-align: center;
 }
 
 .leader-name {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.12rem;
+  font-size: 1.18rem;
   font-weight: 800;
   color: var(--text-dark);
-  margin-bottom: 6px;
-  line-height: 1.25;
+  margin-bottom: 8px;
+  line-height: 1.2;
   letter-spacing: -0.3px;
 }
 .leader-title {
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  margin-bottom: 16px;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
   color: var(--blue-mid);
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .leader-divider {
-  height: 2px;
-  background: linear-gradient(90deg, var(--blue-border), transparent);
-  margin: 14px 0 16px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(26,79,216,0.2) 50%, transparent 100%);
+  margin: 16px 0 0;
+  opacity: 0.6;
 }
 
 .leader-email-row {
