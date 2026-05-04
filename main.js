@@ -75,13 +75,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const colorClass = card.colorClass || `card-color-${index + 1}`;
             const soloClass = card.solo ? ' card-solo' : '';
             cardEl.className = `expertise-card ${colorClass}${soloClass}`;
+            const readMoreLink = card.readMoreText ? `<a href="${card.href || '#contact'}" class="read-more">${card.readMoreText} <i class="fas fa-angle-double-right"></i></a>` : '';
             cardEl.innerHTML = `
               <div class="expertise-top">
                 <div class="expertise-icon"><i class="${card.icon || 'fas fa-cogs'}"></i></div>
               </div>
               <h3>${card.title || ''}</h3>
               <p>${card.description || ''}</p>
-              <a href="${card.href || '#contact'}" class="read-more">${card.readMoreText || 'Read More'} <i class="fas fa-angle-double-right"></i></a>
+              ${readMoreLink}
             `;
             servicesGrid.appendChild(cardEl);
           });
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (teamData) {
         setText('team-label', teamData.label);
         setHtml('team-title', teamData.titleHtml);
-        setText('team-subtitle', teamData.subtitle);
+        setHtml('team-subtitle', teamData.subtitle);
 
         const teamGrid = document.getElementById('team-grid');
         if (teamGrid && Array.isArray(teamData.members)) {
