@@ -26,35 +26,35 @@
 				"description": "We provide end to end managed services to help clients manage their IT environments effectively. Our offerings include infrastructure management, cloud operations, application support, and user services  all designed to improve efficiency, reduce costs, and strengthen security while enabling businesses to focus on their core priorities.",
 				"icon": "fas fa-sliders-h",
 				"colorClass": "card-color-1",
-			"href": "#contact"
+				"href": "#contact"
 			},
 			{
 				"title": "Networking & Collaboration",
 				"description": "We provide secure and scalable networking and collaboration solutions that empower organizations to build resilient, high performance connectivity. Our services include advanced network design, cloud based collaboration platforms, unified communications, and ongoing support. These solutions enable seamless communication, enhance productivity, and ensure teams can work together effectively  whether in the office, remotely, or across global locations.",
 				"icon": "fas fa-share-nodes",
 				"colorClass": "card-color-2",
-			"href": "#contact"
+				"href": "#contact"
 			},
 			{
 				"title": "Cyber Security",
 				"description": "Implementing strong cybersecurity solutions is essential to protect sensitive data, ensure business continuity, prevent financial losses, and build customer trust. We provide both consultancy and practical solutions tailored to your organization's needs. Our services include risk assessments, compliance support, threat detection, incident response, and ongoing monitoring  all designed to strengthen your security posture and safeguard your digital environment.",
 				"icon": "fas fa-lock",
 				"colorClass": "card-color-3",
-			"href": "#contact"
+				"href": "#contact"
 			},
 			{
 				"title": "ERP as a Managed Service",
 				"description": "We manage your ERP while you focus on your core business. Our cloud based ERP approach enables seamless data flows across all business functions, improving visibility and supporting better decision making. With proactive monitoring, system optimization, and ongoing support, we ensure your ERP remains secure, scalable, and aligned with your organizational goals. By partnering with us, you gain a reliable foundation for growth while reducing operational complexity.",
 				"icon": "fas fa-database",
 				"colorClass": "card-color-4",
-			"href": "#contact"
+				"href": "#contact"
 			},
 			{
 				"title": "Cloud & DevOps Engineering",
 				"description": "We help organizations unlock the full potential of Cloud technologies and DevOps practices. Our expertise spans from architecting and building scalable Cloud Landing Zones to modernizing traditional infrastructure and operations. We transform IT disciplines into advanced practices such as DevOps, Site Reliability Engineering (SRE), and platform engineering. With our support, businesses can accelerate innovation, improve system reliability, and achieve faster delivery cycles while maintaining security and scalability.",
 				"icon": "fas fa-cloud",
 				"colorClass": "card-color-5",
-			"href": "#contact"
+				"href": "#contact"
 			},
 			{
 				"title": "Data & AI Platforms",
@@ -62,11 +62,10 @@
 				"icon": "fas fa-chart-line",
 				"colorClass": "card-color-6",
 				"solo": false,
-			"href": "#contact"
+				"href": "#contact"
 			}
 		]
 	},
-
 
 	"team": {
 		"label": "Our People",
